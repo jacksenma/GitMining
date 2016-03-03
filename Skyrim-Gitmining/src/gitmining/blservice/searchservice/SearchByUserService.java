@@ -1,5 +1,10 @@
-package gitmining.bussinesslogic.search;
+package gitmining.blservice.searchservice;
 
+/**
+ * 该接口不是为展示层建立的
+ * @author 豆乘风
+ *
+ */
 public interface SearchByUserService {
 	/**
 	 * 用于查询与输入的用户相关的项目名称

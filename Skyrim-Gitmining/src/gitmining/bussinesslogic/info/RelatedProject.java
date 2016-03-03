@@ -1,6 +1,6 @@
 package gitmining.bussinesslogic.info;
 
-import gitmining.bussinesslogic.search.SearchByUserService;
+import gitmining.blservice.searchservice.SearchByUserService;
 
 public class RelatedProject {
 	private String userName;
