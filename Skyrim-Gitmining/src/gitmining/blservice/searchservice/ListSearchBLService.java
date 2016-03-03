@@ -1,6 +1,6 @@
 package gitmining.blservice.searchservice;
 
-import error.ErroSortException;
+import myenum.SortStrategy;
 import vo.CategoryVO;
 
 public interface ListSearchBLService {
@@ -10,7 +10,7 @@ public interface ListSearchBLService {
 	 * @return 项目名称
 	 * @throws ErroSortException 输入了错误的排名方式
 	 */
-	public String[] searchBySort(String kinds) throws ErroSortException;
+	public String[] searchBySort(SortStrategy strategy);
 	
 	/**
 	 * 分类搜索

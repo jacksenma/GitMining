@@ -1,5 +1,22 @@
 package vo;
 
-public class CategoryVO {
+import java.util.Date;
 
+import po.CategoryPO;
+
+public class CategoryVO {
+	private String language;
+	private String os;
+	private Date createDate;
+	
+	public CategoryVO(String language, String os, Date createDate) {
+		super();
+		this.language = language;
+		this.os = os;
+		this.createDate = createDate;
+	}
+	
+	public CategoryPO convertToPO(){
+		return new CategoryPO(language,os,createDate);
+	}
 }

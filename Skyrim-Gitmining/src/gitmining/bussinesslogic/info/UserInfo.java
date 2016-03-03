@@ -2,6 +2,8 @@ package gitmining.bussinesslogic.info;
 
 import java.util.Date;
 
+import vo.UserInfoVO;
+
 public class UserInfo {
 	private String name;
 	private String majorLanguate;
@@ -17,6 +19,10 @@ public class UserInfo {
 		
 	}
 
+	public UserInfoVO convertToVO(){
+		return null;
+		
+	}
 	public String[] getRelatedProject(){
 		if(relatedProject==null){
 			relatedProject=new RelatedProject(name);

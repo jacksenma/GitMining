@@ -1,8 +1,11 @@
 package gitmining.bussinesslogic.search;
 
-import error.ErroSortException;
+import factory.SearchDataServiceFactory;
 import gitmining.blservice.searchservice.ListSearchBLService;
 import gitmining.blservice.searchservice.SearchByUserService;
+import gitmining.dataservice.searchdataservice.SearchDataService;
+import myenum.SortStrategy;
+import po.SortStrategyPO;
 import vo.CategoryVO;
 
 /**
@@ -11,34 +14,16 @@ import vo.CategoryVO;
  *
  */
 public class ProjectSearch implements SearchByUserService,ListSearchBLService{
+	
 	private String[] projectName;
-	private SortStrategy strategy;
-	private SortFactory factory=new SortFactory();
+	private SearchDataService service=SearchDataServiceFactory.getService();
 	
-	/**
-	 * 用于制定排序的策略
-	 * @param kinds 排序的种类
-	 * @throws ErroSortException 输入错误的类型所抛出的异常
-	 */
-	private void setStrategy(String kinds) throws ErroSortException{
-		this.strategy=factory.getStrategy(kinds);
-	}
-	
-	/**
-	 * 使用策略模式，按照排名所搜
-	 */
-	private String[] searchBySort(){
-		return this.projectName=strategy.excute();
-	}
-	
-	public String[] searchBySort(String kinds) throws ErroSortException{
-		this.setStrategy(kinds);
-		return this.searchBySort();
+	public String[] searchBySort(SortStrategy strategy){
+		return service.getProjectNameBySort(new SortStrategyPO(strategy));
 	}
 	
 	public String[] searchByClass(CategoryVO vo){
-		return projectName;
-		
+		return service.getProjectNameByClass(vo.convertToPO());	
 	}
 	
 	
@@ -49,6 +34,6 @@ public class ProjectSearch implements SearchByUserService,ListSearchBLService{
 	@Override
 	public String[] searchByUserName(String userName) {
 		// TODO Auto-generated method stub
-		return null;
+		return service.getProjectNameByUser(userName);
 	}
 }
