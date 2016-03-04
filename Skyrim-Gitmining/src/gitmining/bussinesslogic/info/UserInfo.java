@@ -6,8 +6,9 @@ import vo.UserInfoVO;
 
 public class UserInfo {
 	private String name;
-	private String majorLanguate;
+	private String majorLanguage;
 	private Date joinedDate;
+	private UserAddress userAddress;
 	private Evaluation evaluation;
 	private RelatedProject relatedProject;
 	
@@ -31,11 +32,11 @@ public class UserInfo {
 	}
 	
 	public String getMajorLanguate() {
-		return majorLanguate;
+		return majorLanguage;
 	}
 
 	public void setMajorLanguate(String majorLanguate) {
-		this.majorLanguate = majorLanguate;
+		this.majorLanguage = majorLanguate;
 	}
 
 	public Date getJoinedDate() {
@@ -52,6 +53,14 @@ public class UserInfo {
 
 	public void setEvaluation(Evaluation evaluation) {
 		this.evaluation = evaluation;
+	}
+
+	public UserAddress getUserAddress() {
+		return userAddress;
+	}
+
+	public void setUserAddress(UserAddress userAddress) {
+		this.userAddress = userAddress;
 	}
 	
 	

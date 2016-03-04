@@ -19,4 +19,16 @@ public class CategoryVO {
 	public CategoryPO convertToPO(){
 		return new CategoryPO(language,os,createDate);
 	}
+	
+	public String getLanguage(){
+		return language;
+	}
+	
+	public String getOS(){
+		return os;
+	}
+	
+	public Date getDate(){
+		return createDate;
+	}
 }
