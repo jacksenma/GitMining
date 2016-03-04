@@ -25,7 +25,9 @@ public class UserInfoBLService_stub implements UserInfoBLService{
 	@Override
 	public String[] getRelatedProjectNames(String userName) {
 		// TODO Auto-generated method stub
+		if(userName.equals("TLOSP"))
 		return new String[]{"ThreeBody","SkyRim","GitMining"};
+		return null;
 	}
 
 }
