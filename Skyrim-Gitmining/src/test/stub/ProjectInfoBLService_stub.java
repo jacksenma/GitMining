@@ -35,7 +35,7 @@ public class ProjectInfoBLService_stub implements ProjectInfoBLService {
 		case "Skyrim":
 		case "GitMining":
 			ParticipantsInfoVO voList[]=new ParticipantsInfoVO[1];
-			voList[1]=new ParticipantsInfoVO("TLOSP", 100, new EvaluationVO(100,100,100));
+			voList[0]=new ParticipantsInfoVO("TLOSP", 10000, new EvaluationVO(100,100,100));
 		}
 		return null;
 	}

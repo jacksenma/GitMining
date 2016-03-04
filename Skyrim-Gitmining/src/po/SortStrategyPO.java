@@ -3,10 +3,20 @@ package po;
 import myenum.SortStrategy;
 
 public class SortStrategyPO {
-	@SuppressWarnings("unused")
+	
 	private SortStrategy strategy;
 	
 	public SortStrategyPO(SortStrategy strategy){
-		this.strategy=strategy;
+		this.setStrategy(strategy);
 	}
+
+	public SortStrategy getStrategy() {
+		return strategy;
+	}
+
+	public void setStrategy(SortStrategy strategy) {
+		this.strategy = strategy;
+	}
+	
+	
 }
