@@ -5,7 +5,6 @@ import gitmining.blservice.searchservice.ListSearchBLService;
 import gitmining.blservice.searchservice.SearchByUserService;
 import gitmining.dataservice.searchdataservice.SearchDataService;
 import myenum.SortStrategy;
-import po.SortStrategyPO;
 import vo.CategoryVO;
 
 /**
@@ -15,20 +14,25 @@ import vo.CategoryVO;
  */
 public class ProjectSearch implements SearchByUserService,ListSearchBLService{
 	
-	private String[] projectName;
+	private SimpleProjectInfo projectList[];
 	private SearchDataService service=SearchDataServiceFactory.getService();
+	private SortMethord methord;
 	
 	public String[] searchBySort(SortStrategy strategy){
-		return service.getProjectNameBySort(new SortStrategyPO(strategy));
+		methord=SortFactory.getMethord(strategy);
+		if(projectList==null){
+			this.getSimpleProjectInfoFromAPI();
+		}
+		return methord.excute(projectList);
 	}
 	
 	public String[] searchByClass(CategoryVO vo){
 		return service.getProjectNameByClass(vo.convertToPO());	
 	}
 	
-	
-	public String[] getProjectName(){
-		return this.projectName;
+
+	private void getSimpleProjectInfoFromAPI(){
+
 	}
 
 	@Override

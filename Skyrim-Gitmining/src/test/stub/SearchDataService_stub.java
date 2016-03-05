@@ -4,25 +4,13 @@ import java.util.Date;
 
 import gitmining.dataservice.searchdataservice.SearchDataService;
 import po.CategoryPO;
-import po.SortStrategyPO;
 
 public class SearchDataService_stub implements SearchDataService{
 
 	@Override
-	public String[] getProjectNameBySort(SortStrategyPO strategy) {
+	public String[] getProjectNameBySort() {
 		// TODO Auto-generated method stub
-		switch(strategy.getStrategy()){
-		case FORK:
-			return new String[]{"ThreeBody","Skyrim","GitMining"};
-		case PATICIPANTS:
-			return new String[]{"GitMining","Skyrim","ThreeBody"};
-		case RANK:
-			return new String[]{"Skyrim","GitMining","ThreeBody"};
-		case STAR:
-			return new String[]{"Skyrim","GitMining","ThreeBody"};
-		default:
-			return null;
-		}
+		return null;
 	}
 
 	@Override

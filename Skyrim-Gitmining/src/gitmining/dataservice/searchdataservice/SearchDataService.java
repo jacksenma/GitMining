@@ -1,7 +1,6 @@
 package gitmining.dataservice.searchdataservice;
 
 import po.CategoryPO;
-import po.SortStrategyPO;
 
 public interface SearchDataService {
 	/**
@@ -9,7 +8,7 @@ public interface SearchDataService {
 	 * @param strategy 排名策略
 	 * @return 按排名顺序整理好的项目名称数组
 	 */
-	public String[] getProjectNameBySort(SortStrategyPO strategy);
+	public String[] getProjectNameBySort();
 	
 	/**
 	 * 分类搜索

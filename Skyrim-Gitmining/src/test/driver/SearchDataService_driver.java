@@ -11,7 +11,6 @@ import gitmining.dataservice.searchdataservice.SearchDataService;
 import myenum.SortStrategy;
 import po.CategoryPO;
 import po.EvaluationPO;
-import po.SortStrategyPO;
 import po.UserAddressPO;
 import po.UserInfoPO;
 import vo.CategoryVO;
@@ -28,7 +27,7 @@ public class SearchDataService_driver {
 
 	private boolean testGetProjectNameBySort() {
 		// TODO Auto-generated method stub
-		String result[]=service.getProjectNameBySort(new SortStrategyPO(SortStrategy.FORK));
+		String result[]=service.getProjectNameBySort();
 		String correctAnswer[]=new String[]{"thoughtbot/paperclip","pat/thinking-sphinx","norman/friendly_id"};
 		if(result.length!=correctAnswer.length){
 			return false;
