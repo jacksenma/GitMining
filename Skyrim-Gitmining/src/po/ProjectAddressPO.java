@@ -1,5 +1,7 @@
 package po;
 
+import gitmining.bussinesslogic.info.ProjectAddress;
+
 public class ProjectAddressPO {
 	private String codeAddress;
 	private String netAddress;
@@ -26,5 +28,7 @@ public class ProjectAddressPO {
 		this.netAddress = netAddress;
 	}
 	
-	
+	public ProjectAddress unpack(){
+		return new ProjectAddress(codeAddress,netAddress);
+	}
 }

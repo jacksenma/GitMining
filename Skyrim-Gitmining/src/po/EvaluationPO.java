@@ -1,5 +1,7 @@
 package po;
 
+import gitmining.bussinesslogic.info.Evaluation;
+
 public class EvaluationPO {
 	private int efficiency;
 	private int quantity;
@@ -12,6 +14,9 @@ public class EvaluationPO {
 		this.total = total;
 	}
 	
+	public Evaluation unpack(){
+		return new Evaluation(efficiency,quantity,total);
+	}
 	public int getEfficiency() {
 		return efficiency;
 	}

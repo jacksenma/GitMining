@@ -2,6 +2,8 @@ package po;
 
 import java.util.Date;
 
+import gitmining.bussinesslogic.info.Category;
+
 public class CategoryPO {
 	private String language;
 	private String os;
@@ -14,6 +16,9 @@ public class CategoryPO {
 		this.createDate = createDate;
 	}
 	
+	public Category unpack(){
+		return new Category(language,os,createDate);
+	}
 	public String getLanguage() {
 		return language;
 	}

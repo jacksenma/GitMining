@@ -1,5 +1,7 @@
 package po;
 
+import gitmining.bussinesslogic.info.UserAddress;
+
 public class UserAddressPO {
 	private String home;
 	private String email;
@@ -12,6 +14,9 @@ public class UserAddressPO {
 		this.company = company;
 	}
 
+	public UserAddress unpack(){
+		return new UserAddress(home,email,company);
+	}
 	public String getHome() {
 		return home;
 	}

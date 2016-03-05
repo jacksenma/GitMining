@@ -2,6 +2,9 @@ package gitmining.bussinesslogic.info;
 
 import java.util.Date;
 
+import factory.InfoDataServiceFactory;
+import gitmining.dataservice.infodataservice.UserInfoDataService;
+import po.UserInfoPO;
 import vo.UserInfoVO;
 
 public class UserInfo {
@@ -11,17 +14,27 @@ public class UserInfo {
 	private UserAddress userAddress;
 	private Evaluation evaluation;
 	private RelatedProject relatedProject;
+	private UserInfoDataService service=InfoDataServiceFactory.getUserInfoDataService();
 	
 	public void setUserName(String name){
+		if(this.name!=null&&this.name.equals(name)){
+			return;
+		}
 		this.name=name;
+		this.inquireUserInfo();
 	}
 	
-	public void inquireUserInfo(){
-		
+	private void inquireUserInfo(){
+		UserInfoPO po=service.getUserInfoDataService(name);
+		this.majorLanguage=po.getMajorLanguage();
+		this.joinedDate=po.getJoinedDate();
+		this.userAddress=po.getUserAddress().unpack();
+		this.evaluation=po.getEvaluation().unpack();
 	}
 
 	public UserInfoVO convertToVO(){
-		return null;
+		return new UserInfoVO(name,majorLanguage,joinedDate,evaluation.convertToVO(),
+				userAddress.converToVO());
 		
 	}
 	public String[] getRelatedProject(){

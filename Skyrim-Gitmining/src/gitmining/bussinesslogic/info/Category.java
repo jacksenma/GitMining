@@ -12,4 +12,13 @@ public class Category {
 	public CategoryVO convertCategoryVO(){
 		return new CategoryVO(language,os,createDate);
 	}
+
+	public Category(String language, String os, Date createDate) {
+		super();
+		this.language = language;
+		this.os = os;
+		this.createDate = createDate;
+	}
+	
+	
 }
