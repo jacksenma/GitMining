@@ -1,4 +1,4 @@
 import ProjectInfoReader
 
-print(ProjectInfoReader.readProjectBranchItem('mojombo', 'grit','master','fn'))
 
+print(ProjectInfoReader.readProjectSinglePullRequest('mojombo', 'grit','2'))
