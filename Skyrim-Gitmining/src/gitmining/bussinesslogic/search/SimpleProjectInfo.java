@@ -7,7 +7,8 @@ public class SimpleProjectInfo {
 	private int star;
 	private int contributorNum;
 	
-	
+
+
 	public int compareByRank(SimpleProjectInfo info){
 		if(info.getRank()==rank) return 0;
 		else if(info.getRank()>rank) return -1;
@@ -15,20 +16,20 @@ public class SimpleProjectInfo {
 	}
 	
 	public int compareByFork(SimpleProjectInfo info){
-		if(info.getFork()==rank) return 0;
-		else if(info.getFork()>rank) return -1;
+		if(info.getFork()==fork) return 0;
+		else if(info.getFork()>fork) return -1;
 		else return 1;
 	}
 	
 	public int compareByStar(SimpleProjectInfo info){
-		if(info.getStar()==rank) return 0;
-		else if(info.getStar()>rank) return -1;
+		if(info.getStar()==star) return 0;
+		else if(info.getStar()>star) return -1;
 		else return 1;
 	}
 	
 	public int compareByContributor(SimpleProjectInfo info){
-		if(info.getContributor()==rank) return 0;
-		else if(info.getContributor()>rank) return -1;
+		if(info.getContributor()==contributorNum) return 0;
+		else if(info.getContributor()>contributorNum) return -1;
 		else return 1;
 	}
 	

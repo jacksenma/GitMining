@@ -7,13 +7,13 @@ public class SortFactory {
 	public static SortMethord getMethord(SortStrategy strategy){
 		switch(strategy){
 		case FORK:
-			break;
+			return new SortByFork();
 		case PATICIPANTS:
-			break;
+			return new SortByContributorNum();
 		case RANK:
-			break;
+			return new SortByRank();
 		case STAR:
-			break;
+			return new SortByStar();
 		default:
 			break;
 		

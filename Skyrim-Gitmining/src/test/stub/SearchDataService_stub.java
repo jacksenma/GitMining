@@ -4,13 +4,18 @@ import java.util.Date;
 
 import gitmining.dataservice.searchdataservice.SearchDataService;
 import po.CategoryPO;
+import po.SimpleProjectInfoPO;
 
 public class SearchDataService_stub implements SearchDataService{
 
 	@Override
-	public String[] getProjectNameBySort() {
+	public SimpleProjectInfoPO[] getProjectNameBySort() {
 		// TODO Auto-generated method stub
-		return null;
+		SimpleProjectInfoPO[] poList=new SimpleProjectInfoPO[3];
+		poList[0]=new SimpleProjectInfoPO("Skyrim",1,2,3,4);
+		poList[1]=new SimpleProjectInfoPO("ThreeBody",4,3,2,1);
+		poList[2]=new SimpleProjectInfoPO("Gitmining",2,1,4,3);
+		return poList;
 	}
 
 	@Override

@@ -26,18 +26,19 @@ public class SearchDataService_driver {
      }
 
 	private boolean testGetProjectNameBySort() {
+		return false;
 		// TODO Auto-generated method stub
-		String result[]=service.getProjectNameBySort();
-		String correctAnswer[]=new String[]{"thoughtbot/paperclip","pat/thinking-sphinx","norman/friendly_id"};
-		if(result.length!=correctAnswer.length){
-			return false;
-		}
-		for(int x=0;x<correctAnswer.length;x++){
-			if(!result[x].equals(correctAnswer[x])){
-				return false;
-			}
-		}
-		return true;
+//		String result[]=service.getProjectNameBySort();
+//		String correctAnswer[]=new String[]{"thoughtbot/paperclip","pat/thinking-sphinx","norman/friendly_id"};
+//		if(result.length!=correctAnswer.length){
+//			return false;
+//		}
+//		for(int x=0;x<correctAnswer.length;x++){
+//			if(!result[x].equals(correctAnswer[x])){
+//				return false;
+//			}
+//		}
+//		return true;
 	}
 
 	private boolean testGetProjectNameByClass() {

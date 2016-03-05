@@ -21,9 +21,13 @@ public class ListSearchBLService_driver {
 		assertEquals(this.testSearchByClass(),true);
 	}
 
+	
 	private boolean testSearchBySort(){
 		String result[]=service.searchBySort(SortStrategy.FORK);
-		String correctAnswer[]=new String[]{"ThreeBody","Skyrim","GitMining"};
+		for(int x=0;x<result.length;x++){
+			System.out.print(result[x]+" ");
+		}
+		String correctAnswer[]=new String[]{"Gitmining","Skyrim","ThreeBody"};
 		if(result.length!=correctAnswer.length){
 			return false;
 		}
@@ -32,6 +36,8 @@ public class ListSearchBLService_driver {
 				return false;
 			}
 		}
+		System.out.println();
+		System.out.println("pass testSearchBySort");
 		return true;
 		
 	}
